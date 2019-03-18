@@ -51,7 +51,7 @@ function vowelsCountB(text) {
 
 /*************FIFTH_TASK***************/
 function repeatCount(text) {
-    var singleWords = text.toLowerCase().match(/[\wа-яё]+/g);
+    var singleWords = text.toLowerCase().split(/[\s\d,.!?;:]+/g);
 
     var repeatCounter = 0,
         maxRepeatWord = '';
@@ -78,11 +78,11 @@ function repeatCount(text) {
 function splitOnSentences(text) {
     var sentences = text.split(/[.!?]+/g);
 
-    if (!sentences[sentences.length - 1].length) {
-        sentences.pop(sentences[sentences.length - 1]);
+    if (!(sentences[sentences.length - 1].length)) {
+        sentences.pop();
     }
 
     for (var i = 0; i < sentences.length; i++) {
-        console.log(sentences[i].trim() + ': Letters quantity is: ' + sentences[i].match(/[a-zа-яё]/gi).length);
+        console.log(sentences[i].trim() + ': Letters quantity is: ' + sentences[i].split(/[,\s\d]+/g).join('').length);
     }
 }

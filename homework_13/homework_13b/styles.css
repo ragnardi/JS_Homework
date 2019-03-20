@@ -1,0 +1,21 @@
+.inputTable {
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+
+.inputTable td {
+    width: 300px;
+    border: 1px solid #000;
+    height: 1.5em;
+    text-align: center;
+    font: 1em Arial, sans-serif;
+    cursor: pointer;
+}
+
+td.rows-generator {
+    font: bold 1.5em Arial, sans-serif;
+}
+
+input {
+    width: 60%;
+}

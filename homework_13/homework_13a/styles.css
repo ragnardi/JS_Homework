@@ -1,0 +1,45 @@
+.wrapper {
+    width: 200px;
+    margin: 0 auto;
+    text-align: center;
+    font: 1em Arial, sans-serif;
+}
+
+.chessBoard {
+    max-width: 200px;
+    margin: 10px auto;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    border-collapse: collapse;
+}
+
+.chessBoard td {
+    width: 20px;
+    height: 20px;
+    border: 1px solid #000000;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.chessBoard tr:nth-of-type(odd) td:nth-of-type(odd),
+.chessBoard tr:nth-of-type(even) td:nth-of-type(even) {
+    background: #000000;
+}
+
+.chessBoard tr:nth-of-type(odd) td:nth-of-type(even),
+.chessBoard tr:nth-of-type(even) td:nth-of-type(odd) {
+    background: #fff;
+}
+
+.alternateColoring tr:nth-of-type(odd) td:nth-of-type(even),
+.alternateColoring tr:nth-of-type(even) td:nth-of-type(odd) {
+    background: #000000;
+}
+
+.alternateColoring tr:nth-of-type(odd) td:nth-of-type(odd),
+.alternateColoring tr:nth-of-type(even) td:nth-of-type(even) {
+    background: #fff;
+}

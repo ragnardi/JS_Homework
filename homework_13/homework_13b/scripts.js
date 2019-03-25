@@ -11,12 +11,19 @@ table.onclick = function (event) {
     } else  {
         var content = elem.innerHTML;
         elem.innerHTML = '<input type="text">';
+
         elem.firstElementChild.value = content;
         elem.firstElementChild.focus();
 
         elem.firstElementChild.addEventListener('blur', function () {
             var inputVal = elem.firstElementChild.value;
             elem.innerHTML = inputVal;
-        })
+        });
+
+        window.addEventListener('keyup', function(event) {
+            if (event.keyCode === 13) {
+                elem.firstElementChild.blur();
+            }
+        });
     }
 };

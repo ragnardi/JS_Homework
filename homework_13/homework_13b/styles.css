@@ -6,7 +6,7 @@
 .inputTable td {
     width: 300px;
     border: 1px solid #000;
-    height: 1.5em;
+    height: 2em;
     text-align: center;
     font: 1em Arial, sans-serif;
     cursor: pointer;
@@ -17,5 +17,5 @@ td.rows-generator {
 }
 
 input {
-    width: 60%;
+    width: 95%;
 }

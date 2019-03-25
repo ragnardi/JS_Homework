@@ -18,10 +18,12 @@ function createChessBoard() {
     var xSizeVal = parseInt(xSize.value),
         ySizeVal = parseInt(ySize.value);
 
-    if (!xSizeVal || !ySizeVal  || (ySizeVal < 1 || ySizeVal > 10) || (xSizeVal < 1 || xSizeVal > 10)) {
+    if ((isNaN(xSizeVal) || isNaN(ySizeVal)) || (ySizeVal < 1 || ySizeVal > 10) || (xSizeVal < 1 || xSizeVal > 10)) {
         alert('Invalid data!');
         xSize.value = '';
         ySize.value = '';
+        btn.disabled = 'true';
+        return;
     }
 
     var board = document.createElement('table');
@@ -50,8 +52,9 @@ btn.addEventListener('click', createChessBoard);
 
 document.getElementsByClassName('wrapper')[0].onclick = function (event) {
     var element = event.target;
+
     if (element.tagName === 'TD') {
-        document.getElementsByTagName('table')[0].classList.toggle('alternateColoring');
+        element.parentElement.parentElement.classList.toggle('alternateColoring');
     }
 };
 

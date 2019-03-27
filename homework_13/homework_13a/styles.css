@@ -24,6 +24,10 @@
     cursor: pointer;
 }
 
+button {
+    margin: 10px 0;
+}
+
 .chessBoard tr:nth-of-type(odd) td:nth-of-type(odd),
 .chessBoard tr:nth-of-type(even) td:nth-of-type(even) {
     background: #000000;

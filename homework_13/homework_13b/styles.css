@@ -5,17 +5,19 @@
 
 .inputTable td {
     width: 300px;
+    padding: 0 5px;
     border: 1px solid #000;
     height: 2em;
-    text-align: center;
+    text-align: left;
     font: 1em Arial, sans-serif;
     cursor: pointer;
 }
 
 td.rows-generator {
     font: bold 1.5em Arial, sans-serif;
+    text-align: center;
 }
 
 input {
-    width: 95%;
+    width: 98%;
 }

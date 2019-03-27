@@ -22,7 +22,7 @@ table.onclick = function (event) {
 
         window.addEventListener('keyup', function(event) {
             if (event.keyCode === 13) {
-                elem.firstElementChild.blur();
+                elem.firstElementChild && elem.firstElementChild.blur();
             }
         });
     }

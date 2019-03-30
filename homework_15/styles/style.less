@@ -1,0 +1,111 @@
+@import "reset.css";
+
+@main-bg: #39383F;
+@button-bg: #4EC055;
+@user-info-bg: #2B7AF0;
+@page-font: 1em Arial, sans-serif;
+@font-color: #fff;
+
+.avatar-size() {
+  width: 200px;
+  height: 200px;
+}
+
+body {
+  background: @main-bg;
+  font: @page-font;
+  color: @font-color;
+  
+  .wrapper {
+    .button-container {
+      padding: 40px;
+      text-align: right;
+
+      button {
+        font: @page-font;
+        color: @font-color;
+        background: @button-bg;
+        padding: 10px;
+        border: 2px solid @button-bg;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        border-radius: 10px;
+        cursor: pointer;
+        outline: none;
+        -webkit-transition: all .2s;
+        -moz-transition: all .2s;
+        -ms-transition: all .2s;
+        -o-transition: all .2s;
+        transition: all .2s;
+
+        &:hover {
+          border-color: #fff;
+        }
+
+        &:active {
+          -webkit-transform: scale(.97);
+          -moz-transform: scale(.97);
+          -ms-transform: scale(.97);
+          -o-transform: scale(.97);
+          transform: scale(.97);
+        }
+      }
+    }
+
+    .users-container {
+      width: 60%;
+      max-width: 900px;
+      min-width: 624px;
+      margin: 0 auto;
+      position: relative;
+
+      .user-card {
+        position: absolute;
+        background: @user-info-bg;
+        padding: 20px;
+        height: 240px;
+        width: 100%;
+        text-align: left;
+        vertical-align: top;
+        
+        .user-name {
+          display: inline-block;
+          font-size: 2.5em;
+          margin-left: 20px;
+          vertical-align: top;
+        }
+        
+        .user-label {
+          position: absolute;
+          padding: 5px 0;
+          width: 100px;
+          top: -28px;
+          left: 0;
+          text-align: center;
+          background: @button-bg;
+          border-top-right-radius: 10px;
+          border-top-left-radius: 10px;
+          cursor: pointer;
+        }
+        
+        img {
+           .avatar-size();
+           display: inline-block;
+        }
+      }
+      
+      .error-message {
+        width: 100%;
+        font: bold 3em Arial, sans-serif;
+        display: table-cell;
+        text-align: center;
+        vertical-align: middle;
+      }
+      
+      .current {
+        background: @user-info-bg !important;
+        z-index: 1;
+      }
+    }
+  }
+}

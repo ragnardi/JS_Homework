@@ -41,17 +41,16 @@ btnReset.onclick = function () {
     clearInterval(timer);
     btnRun.setAttribute('data-btn-condition', 'Запустить');
     btnRun.textContent = btnRun.getAttribute('data-btn-condition');
-    counter.textContent = '00 : 00 : 000';
+    counter.textContent = '00 : 00 : 00';
     controls.style.display = 'none';
 
     mm = 0;
     ss = 0;
     ms = 0;
 
-    var savedData = document.getElementsByClassName('savedResult');
-
-    for (var i = 0; i < savedData.length; i++) {
-        savedData[i].remove();
+    var saves = document.getElementsByClassName('savedResult');
+    while (saves[0]) {
+        saves[0].remove();
     }
 };
 
@@ -76,10 +75,10 @@ function count() {
             clearInterval(timer);
         }
 
-        var outputStr = ('00' + mm).slice(-2) + ' : ' + ('00' + ss).slice(-2) + ' : ' + ('000' + ms).slice(-3);
+        var outputStr = ('00' + mm).slice(-2) + ' : ' + ('00' + ss).slice(-2) + ' : ' + ('00' + ms).slice(-3, this.length - 1);
         counter.textContent = outputStr;
 
-        ms++;
+        ms+=10;
 
         if (ms === 1000) {
             ss++;
@@ -90,11 +89,11 @@ function count() {
             mm++;
             ss = 0;
         }
-    }, 1);
+    }, 10);
 }
 
 function  saveCounter() {
-    if (counter.textContent !== '00 : 00 : 000') {
+    if (counter.textContent !== '00 : 00 : 00') {
 
         var currentValue = {};
         currentValue.mm = mm;
@@ -120,6 +119,6 @@ function startAfterReload() {
 
         localStorage.clear();
     } else {
-        counter.textContent = '00 : 00 : 000';
+        counter.textContent = '00 : 00 : 00';
     }
 }
